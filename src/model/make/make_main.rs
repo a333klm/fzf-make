@@ -95,7 +95,7 @@ impl Make {
         //  By default, when make looks for the makefile, it tries the following names, in order: GNUmakefile, makefile and Makefile.
         //  https://www.gnu.org/software/make/manual/make.html#Makefile-Names
         // It needs to enumerate `Makefile` too not only `makefile` to make it work on case insensitive file system
-        let makefile_name_options = ["GNUmakefile", "makefile", "Makefile"];
+        let makefile_name_options = ["Makefile.generated", "GNUmakefile", "makefile", "Makefile"];
 
         let mut temp_result = Vec::<PathBuf>::new();
         let elements = fs::read_dir(target_path.clone()).unwrap();
